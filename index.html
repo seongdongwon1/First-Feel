@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+            crossorigin="anonymous"
+        />
+
+        <link rel="stylesheet" href="style.css" />
+        <title>첫인상 테스트</title>
+        
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-607548cdb05bf493"></script>
+
+    </head>
+    <body>
+        <div class="container borderclass mt-5 mb-5">
+            <nav class="navbar navbar-expand-lg navbar-light nav-distance">
+                <a class="navbar-brand" href="#">첫인상 테스트</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://blog.naver.com/ehddnjs403">SD 블로그</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <section class="section">
+                <h1 class="title">인공지능 첫인상 테스트(남자)</h1>
+                <h2 class="subtitle">첫인상이 그 날의 (***)을 결정한다.</h2>
+                <h3 class="subtitle">
+                    (면접, 소개팅, 인맥, ...)
+                </h3>
+            </section>
+            <section class="youtube">
+                <div class="youtube-cover d-flex flex-row-reverse mt-5 container">
+                    만든이 : SD
+                </div>
+            </section>
+            <script
+                class="jsbin"
+                src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+            ></script>
+            <div class="file-upload container mb-5">
+                <div class="image-upload-wrap">
+                    <input
+                        class="file-upload-input"
+                        type="file"
+                        onchange="readURL(this);"
+                        accept="image/*"
+                    />
+                    <div class="drag-text">
+                        <img src="images/upload-image.png" class="mt-5 pt-5 upload" />
+                        <h3 class="upload-text mb-5 pb-5 pt-4">
+                            얼굴 사진을 올려놓거나 눌러서 업로드하세요!
+                        </h3>
+                    </div>
+                </div>
+                <div class="file-upload-content">
+                    <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+                    <div id="loading" class="animated bounce">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <p class="text-center">AI가 당신의 첫인상을 분석중입니다.</p>
+            </div>
+                    <p class="result-message"></p>
+                    <div
+                        id="label-container"
+                        class="d-flex flex-column justify-content-around"
+                    ></div>
+                    
+                    
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox_do8p"></div>
+            
+                    <div class="pt-3 image-title-wrap">
+                        <button
+                            type="button p-2"
+                            class="try-again-btn"
+                            onclick="window.location.reload();"
+                        >
+                            <span class="try-again-text">다른 사진으로 재시도</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="webcam-container"></div>
+        <div id="label-container"></div>
+        <div id="disqus_thread"></div>
+
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+            (function () {
+                // DON'T EDIT BELOW THIS LINE
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://frist-feeling.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript
+            >Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript
+        >
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.image-upload-wrap').hide();
+                        $('#loading').show();
+                        $('.file-upload-image').attr('src', e.target.result);
+                        $('.file-upload-content').show();
+                        $('.image-title').html(input.files[0].name);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                    init().then(() => {
+                        predict();
+                         $('#loading').hide();
+                    });
+                } else {
+                    removeUpload();
+                }
+            }
+
+            function removeUpload() {
+                $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+                $('.file-upload-content').hide();
+                $('.image-upload-wrap').show();
+            }
+            $('.image-upload-wrap').bind('dragover', function () {
+                $('.image-upload-wrap').addClass('image-dropping');
+            });
+            $('.image-upload-wrap').bind('dragleave', function () {
+                $('.image-upload-wrap').removeClass('image-dropping');
+            });
+        </script>
+
+        <script type="text/javascript">
+            const URL = 'https://teachablemachine.withgoogle.com/models/jR1mTyuws/';
+            let model, webcam, labelContainer, maxPredictions;
+            async function init() {
+                const modelURL = URL + 'model.json';
+                const metadataURL = URL + 'metadata.json';
+                model = await tmImage.load(modelURL, metadataURL);
+                maxPredictions = model.getTotalClasses();
+                labelContainer = document.getElementById('label-container');
+                for (let i = 0; i < maxPredictions; i++) {
+                    var element = document.createElement('div');
+                    element.classList.add('d-flex');
+                    labelContainer.appendChild(element);
+                }
+            }
+
+            // run the webcam image through the image model
+            async function predict() {
+                // predict can take in an image, video or canvas html element
+                var image = document.getElementById('face-image');
+                const prediction = await model.predict(image, false);
+                prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+                var resultTitle, resultExplain;
+                switch (prediction[0].className) {
+                    case 'Familiarity':
+                        resultTitle = '친근형';
+                        resultExplain =
+                            '누구나 쉽게 다가설 수 있는 친근한 인상을 풍깁니다. 모든 사람들을 처음 대하는 데도 거부감이나 부담감 없이 대화할 수 있는 사람입니다. 이런 <친근형>이 상대방을 공감하고 배려하는 모습을 보일 수 있다면 첫인상에서부터 <고객감동>을 기대할 수 있는 유형 입니다.';
+                        break;
+                    case 'Indifference':
+                        resultTitle = '무관심 형';
+                        resultExplain =
+                            '첫 만남에서 상대방에게 관심이 없이 비쳐진다는 뜻은 거절의 의미로 비쳐질 수 있기 때문에 조심해야 합니다. 다행히 그렇게 보이지 않았다고 해도, 상대방에게 뚜렷한 인상을 전달할 수 없기 때문에 만나는 사람들의 기억에서 희미하게 잊혀지기가 쉽습니다. 따라서 개성 있는 첫인상이 요구되는 스타일 입니다. 첫인상에서 자신의 장점과 단점이 무엇인가를 정확히 파악해서 처음 만나는 사람들에게 선명한 인상을 주려는 노력이 요구 됩니다.';
+                        break;
+                    case 'Repulsion':
+                        resultTitle = '거부감 형';
+                        resultExplain =
+                            '누구나 처음에 접근하기가 어려운 사람입니다. 어딘지 모르게 차갑거나 배타적인 느낌을 주고, 이기적인 사람으로 비쳐지거나 상대방을 무시하는 듯한 인상을 풍기는 사람입니다. 이런 유형이 많은 사람과 접촉하는 일을 하고 있다면, 자신의 의도와는 다르게 오해를 받거나, 첫 번째 거래부터 손해 볼 확률이 매우 높습니다. 이런 사람은 대개가 얼굴표정에 문제가 있는 경우가 많은데요. 중요한 건 본인만 모르고 있다는 것입니다. 빠른 시간 내에 전문가와의 상담을 요합니다.';
+                        break;
+                    case 'Satisfaction':
+                        resultTitle = '만족 형';
+                        resultExplain =
+                            '오랜만에 만나는 반가운 친구 같은 느낌을 주는 사람으로, 처음 만나는데도 전혀 서먹하지 않고, 누구든지 쉽게 끌리는 느낌을 줍니다. 이런 타입이 많은 사람을 만나는 일을 한다면 빠르게 인정받고 성공할 수 있는 유형입니다.';
+                        break;
+                    case 'Transcendence':
+                        resultTitle = '초월형';
+                        resultExplain =
+                            '초월형을 다른 모든 유형을 뛰어 넘는 유형입니다. 그렇게 하려면, 내가 다른 사람에게 어떠한 첫인상을 주느냐보다, 내가 상대방을 어떻게 바라보느냐가 한 차원 높은 관계의 시작입니다. 내가 먼저 상대방의 장점과 능력을 찾아내서 호감을 가지고 바라봐야 합니다. 반대로, 상대방을 수상한 눈초리로 바라본다면, 금방 눈치를 채고 내게 거부감을 느끼게 된다는 겁니다.';
+                        break;
+                    default:
+                        resultTitle = '알수없음';
+                        resultExplain = '';
+                }
+                var title =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-animal-title'>" +
+                    resultTitle +
+                    '</div>';
+                var explain = "<div class='animal-explain pt-2 mb-5'>" + resultExplain + '</div>';
+                $('.result-message').html(title + explain);
+                var barWidth;
+                for (let i = 0; i < maxPredictions; i++) {
+                    if (prediction[i].probability.toFixed(2) > 0.1) {
+                        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + '%';
+                    } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                        barWidth = '4%';
+                    } else {
+                        barWidth = '2%';
+                    }
+                    var labelTitle;
+                    switch (prediction[i].className) {
+                        case 'Familiarity':
+                            labelTitle = '친근형';
+                            break;
+                        case 'Indifference':
+                            labelTitle = '무관심 형';
+                            break;
+                        case 'Repulsion':
+                            labelTitle = '거부감 형';
+                            break;
+                        case 'Satisfaction':
+                            labelTitle = '만족 형';
+                            break;
+                        case 'Transcendence':
+                            labelTitle = '초월형';
+                            break;
+                        default:
+                            labelTitle = '알수없음';
+                    }
+                    var label =
+                        "<div class='animal-label d-flex align-items-center'>" +
+                        labelTitle +
+                        '</div>';
+                    var bar =
+                        "<div class='bar-container position-relative container'><div class='" +
+                        prediction[i].className +
+                        "-box'></div><div class='d-flex justify-content-center align-items-center " +
+                        prediction[i].className +
+                        "-bar' style='width: " +
+                        barWidth +
+                        "'><span class='d-block percent-text'>" +
+                        Math.round(prediction[i].probability.toFixed(2) * 100) +
+                        '%</span></div></div>';
+                    labelContainer.childNodes[i].innerHTML = label + bar;
+                }
+            }
+        </script>
+    </body>
+    <footer class="bg-dark mt-5 p-5 text-center" style="color: #ffffff;">
+        Copyright &copy; 2021 (SD) All right reserved. <br />
+        e-mail : ehddnjs403@naver.com
+    </footer>
+    <!--Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+</html>
