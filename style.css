@@ -2,6 +2,21 @@
   font-family: 'yg-jalnan'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff'); font-weight: normal; font-style: normal; 
 }
 
+.ad-banner
+{
+    width : 320px;
+    margin : 0 auto;
+}
+.ad-banner2
+{
+    width : 320px;
+    margin : 0 auto;
+}
+.ad-banner3
+{
+    width : 320px;
+    margin : 0 auto;
+}
 .navbar
 {
 font-family : yg-jalnan;
