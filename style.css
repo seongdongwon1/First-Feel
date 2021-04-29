@@ -32,9 +32,10 @@ font-family : yg-jalnan;
 
 
 body {
-  font-family: sans-serif;
+  font-family: yg-jalnan;
   background-color: #ffffff;
     box-sizing : border-box;
+    
 }
 
 .file-upload {
