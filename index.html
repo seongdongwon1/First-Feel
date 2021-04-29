@@ -58,7 +58,7 @@
             </nav>
 
             <section class="section">
-                <h1 class="title">첫인상 테스트 (남자)</h1>
+                <h1 class="title">첫인상 테스트</h1>
                 <h2 class="subtitle">첫인상이 그 날의 (***)을 결정한다.</h2>
                 <h3 class="subtitle">
                     (면접, 소개팅, 인맥, ...)
@@ -67,6 +67,22 @@
             <section class="youtube">
                 <div class="youtube-cover d-flex flex-row-reverse mt-5 container">
                     만든이 : SD
+                </div>
+            </section>
+            <h3 class="pb-2 d-flex justify-content-center">
+                성별을 선택하세요
+            </h3>
+            <section class="d-flex justify-content-center">
+                <p class="d-flex align-items-center pr-3">
+                    여자
+                </p>
+                <div>
+                    <input type="checkbox" id="genter">
+                    <label for="genter">
+                        <span class="knob">
+                            <i></i>
+                        </span>
+                    </label>
                 </div>
             </section>
             <script
@@ -104,7 +120,6 @@
               
                     
                     
-                <!-- Go to www.addthis.com/dashboard to customize your tools -->
                 <div class="addthis_inline_share_toolbox_do8p"></div>
             
                     <div class="pt-3 image-title-wrap">
@@ -216,9 +231,19 @@
         </script>
 
         <script type="text/javascript">
-            const URL = 'https://teachablemachine.withgoogle.com/models/jR1mTyuws/';
+            const urlMale = 'https://teachablemachine.withgoogle.com/models/jR1mTyuws/';
+            const urlFemale = "https://teachablemachine.withgoogle.com/models/SOy-wAH42/";
             let model, webcam, labelContainer, maxPredictions;
-            async function init() {
+            async function init() 
+            {
+                if (document.getElementById("gender").checked)
+                {
+                    URL = urlMale;
+                }
+                else
+                {
+                    URL = urlFemale;  
+                }
                 const modelURL = URL + 'model.json';
                 const metadataURL = URL + 'metadata.json';
                 model = await tmImage.load(modelURL, metadataURL);
@@ -238,6 +263,8 @@
                 const prediction = await model.predict(image, false);
                 prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
                 var resultTitle, resultExplain;
+                if(document.getElementById("gender").checked)
+                    {
                 switch (prediction[0].className) {
                     case 'Familiarity':
                         resultTitle = '친근형';
@@ -267,6 +294,36 @@
                     default:
                         resultTitle = '알수없음';
                         resultExplain = '';
+                }
+                    }
+                else
+                {
+                    switch (prediction[0].className)
+                    {
+                        case "Friendly" :
+                            resultTitle = "친근형"
+                            resultExplain = ""
+                            break;
+                        case "Prototype" :
+                            resultTitle = "도도형"
+                            resultExplain = ""
+                            break;
+                        case "Active" :
+                            resultTitle = "활동형"
+                            resultExplain = ""
+                            break;
+                        case "Passion" :
+                            resultTitle = "열정형"
+                            resultExplain = ""
+                            break;
+                        case "Reality" :
+                            resultTitle = "현실형"
+                            resultExplain = ""
+                            break;
+                        default:
+                        resultTitle = '알수없음';
+                        resultExplain = '';
+                    }
                 }
                 var title =
                     "<div class='" +
@@ -302,6 +359,16 @@
                         case 'Transcendence':
                             labelTitle = '초월형';
                             break;
+                        case 'Friendly' :
+                            labelTitle = '친근형';
+                        case 'Prototype' :
+                            labelTitle = '도도형';
+                        case 'Active' :
+                            labelTitle = '활동형';
+                        case 'Passion' :
+                            labelTitle = '열정형';
+                        case 'Reality' :
+                            labelTitle = '현실형';
                         default:
                             labelTitle = '알수없음';
                     }
@@ -337,4 +404,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+    
+    <!-- 여기어때 잘난체 폰트 사용 -->
 </html>
