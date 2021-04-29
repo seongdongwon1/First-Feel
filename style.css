@@ -390,7 +390,7 @@ body {
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(195, 140, 102, 0.2);
+  background-color: rgba(117, 204, 84, 0.2);
 }
 .Friendly-bar {
   position: absolute;
@@ -398,7 +398,7 @@ body {
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(195, 140, 102, 1);
+  background-color: rgba(117, 204, 84, 1);
 }
 
 
@@ -409,7 +409,7 @@ body {
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(195, 140, 102, 0.2);
+  background-color: rgba(117, 204, 84, 0.2);
 }
 .Prototype-bar {
   position: absolute;
@@ -428,7 +428,7 @@ body {
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(195, 140, 102, 0.2);
+  background-color: rgba(27, 175, 234, 0.2);
 }
 .Active-bar {
   position: absolute;
@@ -436,7 +436,7 @@ body {
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(195, 140, 102, 1);
+  background-color: rgba(27, 175, 234, 1);
 }
 
 
@@ -447,7 +447,7 @@ body {
   height: 2rem;
   border-radius: 10px;
   width: 100%;
-  background-color: rgba(195, 140, 102, 0.2);
+  background-color: rgba(251, 176, 59, 0.2);
 }
 .Passion-bar {
   position: absolute;
@@ -455,7 +455,7 @@ body {
   left: 0;
   height: 2rem;
   border-radius: 10px;
-  background-color: rgba(195, 140, 102, 1);
+  background-color: rgba(251, 176, 59, 1);
 }
 
 
